@@ -1,0 +1,161 @@
+body,html{
+	font-family: Verdana;
+	font-size: 10px;
+}
+
+#members {
+  font-family: Verdana;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#members td, #members th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#members tr:nth-child(even){background-color: #f2f2f2;}
+
+#members tr:hover {background-color: #ddd;}
+
+#members th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+
+table, th, td {
+	border-collapse: collapse;
+	font-size: 12px;
+	text-align: left;
+	border-spacing: 0;
+	border: 0px;
+}
+
+input[type=text], select, textarea {
+  padding: 2px 1px;
+  margin: 2px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: transparent; 
+  color: #E74C3C
+}
+
+a:link {
+  color: #F5B041;
+  text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+  color: #F5B041;
+}
+
+/* mouse over link */
+a:hover {
+  color: #E74C3C;
+}
+
+/* selected link */
+a:active {
+  color: #5DADE2;
+}
+
+ input[type=number]{
+  padding: 2px 1px;
+  margin: 2px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: transparent; 
+  color: #E74C3C
+}
+
+ input[type=password]{
+  padding: 2px 1px;
+  margin: 2px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: transparent; 
+  color: #E74C3C
+}
+
+
+input[type=submit] {
+  background-color: #A5A5A5;
+  color: white;
+  padding: 4px 10px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #D35400;
+  color: #FFFFFF;
+}
+
+
+ label {
+  color: #85929E;
+}
+
+.boxhead a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+div {
+  background-color: transparent; 
+  color: #E74C3C
+}
+
+.btn {
+  border: 2px solid transparent;
+  background: #E6E6E6;
+  color: #0B4C5F;
+  text-align: center;
+  font-size: 10px;
+  line-height: 15px;
+  padding: 10px 0;
+  text-decoration: none;
+  text-shadow: none;
+  border-radius: 3px;
+  box-shadow: none;
+  transition: 0.5s;
+  display: block;
+  width: 150px;
+  margin: 0 auto;
+}
+ 
+.btn:hover {
+  background-color: #DF3A01;
+  color: #FFFFFF;
+}
+
+
+div.scrollmenu {
+  background-color: #333;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+div.scrollmenu a {
+  display: inline-block;
+  color: white;
+  text-align: left;
+  padding: 14px;
+  text-decoration: none;
+}
+
+div.scrollmenu a:hover {
+  background-color: #777;
+}

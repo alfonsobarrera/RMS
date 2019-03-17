@@ -1,0 +1,45 @@
+{% extends "home.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+  {{ super() }}
+  <style type="text/css">
+    .important { color: #336699; }
+  </style>
+{% endblock %}
+{% block content %}
+  <h1>Administrate Users</h1>
+	
+		{% if users %}
+			<table id="members">
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Username</th>
+					<th>Password</th>
+					<th>Tracker Key</th>
+					<th>Role</th>
+					<th>Status</th>
+					<th>Action</th>
+				</tr>
+		
+				{% for user in users %}
+				<tr>
+					<td>{{user.id}}</td>
+					<td>{{user.name}}</td>
+					<td>{{user.username}}</td>
+					<td>{{user.password}}</td>
+					<td>{{user.trackerkey}}</td>
+					<td>{{user.role}}</td>
+					<td>{{user.status}}</td>
+
+					<td>
+						<a href="{{url_for('update_user', userid=user.id)}}">Update</a>
+					</td>
+				</tr>
+				{% endfor %}
+			</table>
+		{% else %}
+			There are no users
+		{% endif %}
+	
+{% endblock %}
