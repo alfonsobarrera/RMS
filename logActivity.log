@@ -1,0 +1,410 @@
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 264-940-393
+INFO:werkzeug: * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [04/Jun/2019 21:33:59] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Jun/2019 21:34:00] "GET /static/style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Jun/2019 21:34:06] "GET /home HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Jun/2019 21:34:07] "GET /static/style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Jun/2019 21:34:11] "GET /logout HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [04/Jun/2019 21:34:11] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Jun/2019 21:34:11] "GET /static/style.css HTTP/1.1" 200 -
+DEBUG:__main__:Login attempt by user alfonso
+INFO:werkzeug:127.0.0.1 - - [04/Jun/2019 21:34:25] "POST / HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [04/Jun/2019 21:34:25] "GET /home HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Jun/2019 21:34:26] "GET /static/style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Jun/2019 21:35:37] "GET /logout HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [04/Jun/2019 21:35:38] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Jun/2019 21:35:38] "GET /static/style.css HTTP/1.1" 200 -
+DEBUG:__main__:Login attempt by user alfonso
+INFO:werkzeug:127.0.0.1 - - [04/Jun/2019 21:35:44] "POST / HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [04/Jun/2019 21:35:45] "GET /home HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Jun/2019 21:35:45] "GET /static/style.css HTTP/1.1" 200 -
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 828-303-986
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 17:17:13] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 17:17:13] "GET /static/style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 17:17:13] "GET /static/icon.gif HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 17:17:28] "POST / HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 17:17:28] "GET /home HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 17:17:28] "GET /static/style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 17:17:33] "GET /projects HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 17:17:33] "GET /static/style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 17:17:35] "GET /topics HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 17:17:35] "GET /static/style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 17:17:47] "GET /projects HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 17:17:47] "GET /static/style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 17:17:48] "GET /topics HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 17:17:48] "GET /static/style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 17:17:49] "GET /projects HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 17:17:49] "GET /static/style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 17:17:50] "GET /topics HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 17:17:50] "GET /static/style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 17:17:51] "GET /projects HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 17:17:51] "GET /static/style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 17:17:52] "GET /topics HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 17:17:52] "GET /static/style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 17:17:53] "GET /projects HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 17:17:53] "GET /static/style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 17:17:54] "GET /topics HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 17:17:54] "GET /static/style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 17:17:55] "GET /projects HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 17:17:55] "GET /static/style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 17:17:56] "GET /topics HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 17:17:56] "GET /static/style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 17:17:57] "GET /profile/user/3 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 17:17:57] "GET /static/style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 17:18:02] "GET /projects HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 17:18:02] "GET /static/style.css HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 828-303-986
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 17:53:56] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 17:53:57] "GET /static/style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 17:53:57] "GET /static/icon.gif HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 17:54:02] "POST / HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 17:54:02] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 17:54:02] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 17:54:02] "GET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 17:54:02] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 17:54:02] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 17:54:17] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 17:54:17] "GET /static/style.css HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 828-303-986
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 17:57:29] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 17:57:29] "GET /static/style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 17:57:34] "POST / HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 17:57:34] "GET /home HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 17:57:34] "GET /static/style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 17:57:43] "GET /topics HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 17:57:43] "GET /static/style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 17:57:44] "GET /projects HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 17:57:44] "GET /static/style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 17:57:59] "GET /topics HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 17:57:59] "GET /static/style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 17:58:00] "GET /projects HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 17:58:00] "GET /static/style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 17:58:01] "GET /topics HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 17:58:01] "GET /static/style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 17:58:02] "GET /profile/user/3 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 17:58:02] "GET /static/style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 17:58:06] "GET /projects HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 17:58:06] "GET /static/style.css HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 828-303-986
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 21:44:53] "GET /projects HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 21:44:53] "GET /static/style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 21:44:55] "GET /applications HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 21:44:55] "GET /applications?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 21:44:55] "GET /applications?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 21:44:55] "GET /applications?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 21:44:55] "GET /applications?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 21:44:55] "GET /applications?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 21:45:17] "GET /applications HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 21:45:17] "GET /static/style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 21:54:21] "GET /applications HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 21:54:21] "GET /static/style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 21:54:42] "GET /applications HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 21:54:42] "GET /static/style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 21:55:03] "GET /applications HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 21:55:03] "GET /static/style.css HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/alfonso/Documents/scripts/python/RMS/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 828-303-986
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 22:13:53] "GET /applications HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 22:13:53] "GET /applications?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 22:13:53] "GET /applications?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 22:13:53] "GET /applications?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 22:13:53] "GET /applications?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 22:14:28] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 22:14:28] "GET /static/style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 22:14:37] "POST / HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 22:14:37] "GET /home HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 22:14:37] "GET /static/style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 22:15:08] "GET /applications HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 22:15:08] "GET /static/style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 22:15:35] "POST /applications HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 22:15:36] "GET /static/style.css HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/alfonso/Documents/scripts/python/RMS/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 828-303-986
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 22:24:29] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 22:24:29] "GET /static/style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 22:24:34] "POST / HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 22:24:34] "GET /home HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 22:24:34] "GET /static/style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 22:24:36] "GET /applications HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 22:24:36] "GET /static/style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 22:24:57] "POST /applications HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 22:24:57] "GET /static/style.css HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/alfonso/Documents/scripts/python/RMS/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 828-303-986
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 22:26:54] "GET /application HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 22:26:54] "GET /static/style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 22:26:57] "GET /applications HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 22:26:57] "GET /static/style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 22:27:15] "POST /applications HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 22:27:15] "GET /static/style.css HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/alfonso/Documents/scripts/python/RMS/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 828-303-986
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 22:28:03] "GET /applications HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 22:28:03] "GET /static/style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 22:28:45] "POST /applications HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 22:28:45] "GET /static/style.css HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/alfonso/Documents/scripts/python/RMS/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 828-303-986
+INFO:werkzeug: * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 828-303-986
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 22:32:58] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 22:32:58] "GET /static/style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 22:33:05] "POST / HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 22:33:05] "GET /home HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 22:33:05] "GET /static/style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 22:33:07] "GET /applications HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 22:33:07] "GET /static/style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 22:33:15] "POST /applications HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 22:33:15] "GET /static/style.css HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/alfonso/Documents/scripts/python/RMS/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 828-303-986
+INFO:werkzeug: * Detected change in '/home/alfonso/Documents/scripts/python/RMS/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 828-303-986
+INFO:werkzeug: * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 828-303-986
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 22:36:07] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 22:36:07] "GET /static/style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 22:36:12] "POST / HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 22:36:12] "GET /home HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 22:36:12] "GET /static/style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 22:36:13] "GET /applications HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 22:36:13] "GET /static/style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 22:36:25] "POST /applications HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Jun/2019 22:36:25] "GET /static/style.css HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/alfonso/Documents/scripts/python/RMS/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!
+WARNING:werkzeug: * Debugger is active!

@@ -1,0 +1,61 @@
+
+ {% block head %}
+  <title>RMS</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+	<link rel="icon" href="{{ url_for('static', filename='icon.gif') }}">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+   
+ {% endblock %}
+
+<script>
+function deleteRow(defectid, tblName, targetLink, fproject)
+{	
+	var tableRow = targetLink.parentNode.parentNode;
+	var tbl = tableRow.parentNode;
+	tbl.removeChild(tableRow);
+	test(defectid, fproject);
+}
+
+function test(defectid, fproject){
+	ajaxCall("/addSelected_FortifyDefect/projectid/"+{{projectid}}+"/defectid/"+defectid+"/fproject/"+fproject+"","feedback");
+}
+
+function ajaxCall(url, element) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById(element).innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", url, true);
+  xhttp.send();
+}
+
+function verifycwe(){
+  var x = document.getElementById("cwe");
+  url='/project_add_defect/verifycwe/'+x.value.toString();
+  ajaxCall(url,'cweTitle')
+}
+</script>
+	
+<p id='feedback'></p>
+
+{% for index in defects: %}
+	<h2>{{defects[index]['project']}}</h2>
+	<table name='bdayTable'>
+	<tr>
+	<th>Name</th><th>Location</th><th>Risk</th><th>Action</th>
+	</tr>
+	{% for issue in defects[index]['defects'] %}
+	<tr>
+		<td><a href='#' onclick="deleteRow({{issue}}, 'bdayTable', this, '{{defects[index]['project']}}')" >Add</a></td>
+		<td>{{defects[index]['defects'][issue]['name']}}</td>
+		<td>{{defects[index]['defects'][issue]['location']}}:{{defects[index]['defects'][issue]['lineNumber']}}</td>
+		<td>{{defects[index]['defects'][issue]['risk']}}</td>
+	</tr>
+	{% endfor %}
+	</table>
+{% endfor %}
+

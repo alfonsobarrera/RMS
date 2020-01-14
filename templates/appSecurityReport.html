@@ -1,0 +1,899 @@
+
+{% block body %}
+{% if session['logged_in'] %}
+{% autoescape false %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+	font-family: arial;
+    font-size: 10px;
+}
+
+h1 {
+    color: #FE642E;
+    text-align: center;
+	font-size: 30px;
+}
+
+h2 {
+    color: #000000;
+    text-align: left;
+	font-size: 24px;
+	
+}
+
+h3 {
+    color: #000000;
+    text-align: left;
+	font-size: 14px;
+}
+
+h4 {
+    color: #086A87
+    text-align: left;
+	font-size: 12px;
+}
+
+p {
+    font-family: verdana;
+    font-size: 11px;
+}
+
+th, td {
+    padding: 5px;
+
+}
+
+#coverpage {
+    font-family: verdana;
+    border-collapse: collapse;
+	border: 0px solid #ddd;
+    width: 100%;
+}
+
+#coverpage td, #coverpage th {
+    border: 0px solid #ddd;
+    padding: 8px;
+	text-align: center;
+}
+
+#defects {
+    font-family: verdana;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#defects td, #defects th {
+    border: 0px solid #ddd;
+    padding: 2px;
+}
+
+#defects tr:nth-child(even){background-color: #f2f2f2;}
+
+#defects tr:hover {background-color: #ddd;}
+
+#defects th {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-align: left;
+    background-color: #0B4C5F;
+    color: white;
+}
+
+#generalInfo {
+    font-family: verdana;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#generalInfo td, #generalInfo th {
+    border: 0px solid #ddd;
+    padding: 2px;
+}
+
+#generalInfo tr:nth-child(even){background-color: #f2f2f2;}
+
+#generalInfo tr:hover {background-color: #ddd;}
+
+#generalInfo th {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-align: left;
+    background-color: #086A87;
+    color: white;
+}
+
+#vulnerabilityDefinitions {
+    font-family: verdana;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#vulnerabilityDefinitions td, #vulnerabilityDefinitions th {
+    border: 0px solid #ddd;
+    padding: 8px;
+}
+
+#vulnerabilityDefinitions tr:nth-child(even){background-color: #f2f2f2;}
+
+#vulnerabilityDefinitions tr:hover {background-color: #ddd;}
+
+#vulnerabilityDefinitions th {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    text-align: left;
+    background-color: #DF3A01;
+    color: white;
+}
+
+#dread {
+    font-family: verdana;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#dread td, #dread th {
+    border: 0px solid #ddd;
+    padding: 2px;
+}
+
+#dread tr:nth-child(even){background-color: #f2f2f2;}
+
+#dread tr:hover {background-color: #ddd;}
+
+#dread th {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: left;
+    background-color: #D8D8D8;
+    color: black;
+}
+
+</style>
+
+
+<script>
+
+
+function validate(evt) {
+  var theEvent = evt || window.event;
+  var key = theEvent.keyCode || theEvent.which;
+  key = String.fromCharCode( key );
+  var regex = /[0-9]|\./;
+  if( !regex.test(key) ) {
+    theEvent.returnValue = false;
+    if(theEvent.preventDefault) theEvent.preventDefault();
+  }
+}
+
+function myFunction() {
+  // Declare variables 
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    } 
+  }
+}
+</script>
+<title>Security Report - {{appname}}</title>
+</head>
+
+<body>
+
+<br><br><br><br>
+<!--Cover Page-->
+<table border="0" width="100%" id="coverpage">
+	<tr>
+		<td>
+			<img  height="300" width="300" src="/static/home_depot_logo2.jpg">
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<h1><font color="#FE642E">Security Team</font></h1>
+		</td>
+	</tr>
+	<tr>
+		<td align="center">
+			<font size='6'>{{appname}}</font>
+		</td>
+	</tr>
+	<tr>
+		<td align="center">
+			<font size='5'>Application Security Report</font>
+		</td>
+	</tr>
+	<tr>
+		<td align="center">
+			<font size='4'>Security Engineer: {{user}}</font>
+		</td>
+	</tr>
+</table>
+
+
+
+<p style="page-break-before: always"></p>
+<!--Executive Summary-->
+<h1>Executive Summary</h1>
+
+
+<p>
+			The <b>Security Team</b> team engaged the <b>{{appname}}</b> team to conduct a Web Application Security Assessment to the <b>{{appname}}</b> application. The purpose of the engagement was to utilize active and passive exploitation techniques in order to evaluate the security of the application against best practice criteria and to validate its security mechanisms and identify application level vulnerabilities.
+</p>
+
+<h2>White-Box Testing</h2>
+
+<p>
+			White-box testing is performed on a system with full knowledge of the working components, including the source code and its operation.<br>
+			The advantage of white-box testing is that the attacker has knowledge of how the system works and can employ their time on compromising it. The unit testing of a section of code by the development team is an example of white-box testing. White-box testing, by design, provides the attacker with complete documentation, including source code and configuration parameters. This information can then be used to devise potential methods of attacking the software. Thus, white-box testing can focus on the structural basis of the software and the operational deployment considerations with respect to its use or misuse.
+			
+			
+</p>
+
+<!-- Application Information -->
+<h2>Application Information</h2>
+<table id="generalInfo">
+	
+		<tr>
+			<th width="15%">
+				SAP ID
+			</th>
+			<td width="85%">
+				<b>{{app[0]}}</b>
+			</td>
+		</tr>
+		<tr>
+			<th>
+				Experience
+			</th>
+			<td>
+				<i>{{app[1]}}</i>
+			</td>
+		</tr>
+		<tr>
+			<th>
+				Sub Experience
+			</th>
+			<td>
+				<i>{{app[2]}}</i>
+			</td>
+		</tr>
+		<tr>
+			<th>
+				Application Name
+			</th>
+			<td>
+				<i>{{app[3]}}</i>
+			</td>
+		</tr>
+		<tr>
+			<th>
+				VP IT
+			</th>
+			<td>
+				<i>{{app[4]}}</i>
+			</td>
+		</tr>
+				<tr>
+			<th>
+				Director
+			</th>
+			<td>
+				<i>{{app[5]}}</i>
+			</td>
+		</tr>
+		<tr>
+			<th>
+				Point of Contact
+			</th>
+			<td>
+				<i>{{app[6]}}</i>
+			</td>
+		</tr>
+				<tr>
+			<th>
+				PCI Assessment
+			</th>
+			<td>
+				<i>Yes</i>
+			</td>
+		</tr>
+				<tr>
+			<th>
+				Audience
+			</th>
+			<td>
+				<i><b>Restricted</b></i>
+			</td>
+		</tr>
+				<tr>
+			<th>
+				Description
+			</th>
+			<td>
+				<i>{{app[9]}}</i>
+			</td>
+		</tr>
+				
+
+</table>
+
+<!-- Project Information -->
+<h2>Project Information</h2>
+<table id="generalInfo">
+
+			<tr>
+				<th width="15%">
+					Assessment Type
+				</th>
+				<td width="85%">
+					<b>PCI</b>
+				</td>
+			</tr>
+			<tr>
+				<th>
+					Priority
+				</th>
+				<td>
+				<!--<td bgcolor="#FA5858">-->
+					<b>Priority 1</b>
+				</td>
+			</tr>
+			
+			<tr>
+				<th>
+					Start Date
+				</th>
+				<td>
+					{{project[8]}}
+				</td>
+			</tr>
+			<tr>
+				<th>
+					End Date
+				</th>
+				<td>
+					{{date}}
+				</td>
+			</tr>
+			<tr>
+				<th>
+					Assessment ID
+				</th>
+				<td>
+					{{project[11]}}
+				</td>
+			</tr>
+
+</table>
+<br>
+
+<!-- METHODOLOGY -->
+<p style="page-break-before: always"><br><br>
+<h1>Methodology</h1>
+<h2>Web Application Security Testing</h2>
+
+<p align="center">
+
+<h3><i>“Without software requirements, software will fail and without secure software requirements, organizations will.”... Manu Paul -- CSSLP CBK --</i></h3>
+</p>
+<p align="justify">
+Application Security is the analysis of the security weaknesses, design flaws and vulnerabilities in software. It involves the analysis, design, and implementation of controls in order to decrease the risk of such security issues.  
+</p>
+<p align="justify">
+Software development projects that lack software requirement suffer from poor product quality extensive timelines, scope creep, increased cost to re-architect missed requirements or dix errors, and even customer or end user dissatisfaction.
+</p>
+<p align="justify">
+Software development projects that lack security requirements additionally suffer from the threats to confidentiality, integrity, and availability, which include unauthorized disclosure alteration, and destruction.
+</p>
+
+
+<p align="justify">
+The Pentest involves testing the application in an environment that mirrors the associated production environment. Examining issues such as configuration issues and how they affect the program outcome is important. Data issues that can result in programmatic instability can also be investigated in the simulated environment.
+</p>
+
+<h2>Application Security Testing Flow</h2>
+<p align="justify">
+A security assessment starts from the moment that a new request comes to our assessments queue. The sources of requests are the Architecture Security Assessments (ASA) and the Wellness Security Program. Once the assessment is in our queue, we proceed to execute the following phases
+<ol>
+	<li>Contact the application owner to refresh/update testing data (Environment urls, credentials, source code repositories, etc.).</li>
+	<li>Confirm the match between Application's Source Code version and application UI.</li>
+	<li>Explore the application.</li>
+	<li>Test Authentication Vulnerabilities.</li>
+	<li>Test Authorization.</li>
+	<li>Test Session Management.</li>
+	<li>Test Input Validation vulnerabilities.</li>
+	<li>Test Client-side vulnerabilities.</li>
+	<li>Test Logic Flaws.</li>
+	<li>Test Application functionality-specific vulnerabilities.</li>
+	<li>Test Application component(s) vulnerabilities.</li>
+	<li>Test Cryptography strength and agility.</li>
+	<li>Generate Security Report.</li>
+	<li>Schedule readout with the application owner.</li>
+	<li>Submit defects into deadbolt (Defects Tracking tool).</li>
+	<li>Submit security report to the application's owner and stakeholders.</li>
+</ol>
+</p>
+
+<h2>CWE/SANS Top 25 Vulnerability Categories</h2>
+<p align="justify">
+Begun by MITRE and supported by the U.S. Department of Homeland Security, the CWE/SANS Top 25 list is the result of collaboration between many top software security experts worldwide. This list represents the most widespread and critical errors that can lead to serious vulnerabilities in software. They are often easy to find, and easy to exploit. Left unmitigated, they are easy targets for attackers and can result in widespread damage to software, data, and even enterprise security.
+</p>
+<table width="100%" id="defects">
+<tr><th>Rank</th><th>Score</th><th>ID</th><th>Name</th></tr>
+<tr><td>[1]</td><td>93.8</td><td><a href="#CWE-89">CWE-89</a></td>
+<td>Improper Neutralization of Special Elements used in an SQL Command (&#39;SQL Injection&#39;)</td>
+</tr>
+<tr><td>[2]</td><td>83.3</td><td><a href="#CWE-78">CWE-78</a></td>
+<td>Improper Neutralization of Special Elements used in an OS Command (&#39;OS Command Injection&#39;)</td>
+</tr>
+<tr><td>[3]</td><td>79.0</td><td><a href="#CWE-120">CWE-120</a></td>
+<td>Buffer Copy without Checking Size of Input (&#39;Classic Buffer Overflow&#39;)</td>
+</tr>
+<tr><td>[4]</td><td>77.7</td><td><a href="#CWE-79">CWE-79</a></td>
+<td>Improper Neutralization of Input During Web Page Generation (&#39;Cross-site Scripting&#39;)</td>
+</tr>
+<tr><td>[5]</td><td>76.9</td><td><a href="#CWE-306">CWE-306</a></td>
+<td>Missing Authentication for Critical Function</td>
+</tr>
+<tr><td>[6]</td><td>76.8</td><td><a href="#CWE-862">CWE-862</a></td>
+<td>Missing Authorization</td>
+</tr>
+<tr><td>[7]</td><td>75.0</td><td><a href="#CWE-798">CWE-798</a></td>
+<td>Use of Hard-coded Credentials</td>
+</tr>
+<tr><td>[8]</td><td>75.0</td><td><a href="#CWE-311">CWE-311</a></td>
+<td>Missing Encryption of Sensitive Data</td>
+</tr>
+<tr><td>[9]</td><td>74.0</td><td><a href="#CWE-434">CWE-434</a></td>
+<td>Unrestricted Upload of File with Dangerous Type</td>
+</tr>
+<tr><td>[10]</td><td>73.8</td><td><a href="#CWE-807">CWE-807</a></td>
+<td>Reliance on Untrusted Inputs in a Security Decision</td>
+</tr>
+<tr><td>[11]</td><td>73.1</td><td><a href="#CWE-250">CWE-250</a></td>
+<td>Execution with Unnecessary Privileges</td>
+</tr>
+<tr><td>[12]</td><td>70.1</td><td><a href="#CWE-352">CWE-352</a></td>
+<td>Cross-Site Request Forgery (CSRF)</td>
+</tr>
+<tr><td>[13]</td><td>69.3</td><td><a href="#CWE-22">CWE-22</a></td>
+<td>Improper Limitation of a Pathname to a Restricted Directory (&#39;Path Traversal&#39;)</td>
+</tr>
+<tr><td>[14]</td><td>68.5</td><td><a href="#CWE-494">CWE-494</a></td>
+<td>Download of Code Without Integrity Check</td>
+</tr>
+<tr><td>[15]</td><td>67.8</td><td><a href="#CWE-863">CWE-863</a></td>
+<td>Incorrect Authorization</td>
+</tr>
+<tr><td>[16]</td><td>66.0</td><td><a href="#CWE-829">CWE-829</a></td>
+<td>Inclusion of Functionality from Untrusted Control Sphere</td>
+</tr>
+<tr><td>[17]</td><td>65.5</td><td><a href="#CWE-732">CWE-732</a></td>
+<td>Incorrect Permission Assignment for Critical Resource</td>
+</tr>
+<tr><td>[18]</td><td>64.6</td><td><a href="#CWE-676">CWE-676</a></td>
+<td>Use of Potentially Dangerous Function</td>
+</tr>
+<tr><td>[19]</td><td>64.1</td><td><a href="#CWE-327">CWE-327</a></td>
+<td>Use of a Broken or Risky Cryptographic Algorithm</td>
+</tr>
+<tr><td>[20]</td><td>62.4</td><td><a href="#CWE-131">CWE-131</a></td>
+<td>Incorrect Calculation of Buffer Size</td>
+</tr>
+<tr><td>[21]</td><td>61.5</td><td><a href="#CWE-307">CWE-307</a></td>
+<td>Improper Restriction of Excessive Authentication Attempts</td>
+</tr>
+<tr><td>[22]</td><td>61.1</td><td><a href="#CWE-601">CWE-601</a></td>
+<td>URL Redirection to Untrusted Site (&#39;Open Redirect&#39;)</td>
+</tr>
+<tr><td>[23]</td><td>61.0</td><td><a href="#CWE-134">CWE-134</a></td>
+<td>Uncontrolled Format String</td>
+</tr>
+<tr><td>[24]</td><td>60.3</td><td><a href="#CWE-190">CWE-190</a></td>
+<td>Integer Overflow or Wraparound</td>
+</tr>
+<tr><td>[25]</td><td>59.9</td><td><a href="#CWE-759">CWE-759</a></td>
+<td>Use of a One-Way Hash without a Salt</td>
+</tr>
+</table>
+
+
+
+
+<p style="page-break-before: always"></p>
+<h1>Security Defects</h1>
+<!-- Project Metrics -->
+<h2>Security Testing Metrics</h2>
+{% if vulns %}
+			<table id="defects" width="auto" align="center">
+						<tr>
+							<th width="80%">
+								<strong>Vulnerability</strong>
+							</th>
+							<th width="20%">
+								<strong>Counter</strong>
+							</th>
+						</tr>
+						{% for e in vulns %}
+						<tr>
+							<td>{{e}}</td>
+							<td>{{vulns[e]['occurrences']}}</td>
+						</tr>
+						{% endfor %}
+			</table>
+
+			<!--
+			<p align="center">
+				{{grafica}}
+			</p>
+			-->
+			<h3><font color="red"><b>Important Notice</b></font></h3>
+			<p>
+			This report details the scope of testing conducted, all significant findings, identified during the specified timeframe, along with detailed remedial advice; all the vulnerabilities are reported and rated in base to the Security Engineer criteria. The risk could be increased or reduced according to other factors as compensative process, interaction with other systems, etc.
+
+			</p>
+{% else %}
+			<p>The are no security defects to report in the <b>{{appname}}</b> application.</p>
+{% endif %}
+<!-- This is my space for Graphics -->
+<p style="page-break-before: always"> <br><br>
+<!-- DYNAMIC DEFECTS -->
+<h2><b>Pen Test Defects</b></h2>
+<p align="justify">
+Penetration testing, sometimes called pen testing, is an active form of examining the system for weaknesses and vulnerabilities. While scanning activities are passive in nature, penetration testing is more active. Vulnerability scanners operate in a sweep, looking for vulnerabilities using limited intelligence; penetration testing harnesses the power of human intellect to make a more targeted examination. 
+</p>
+<p align="justify">
+Penetration testers attack a system using information gathered from it and expert knowledge in how weaknesses can exist in systems. Penetration testing is designed to mimic the attacker’s ethos and methodology, with the objective of finding issues before an adversary does. It is a highly structured and systematic method of exploring a system and finding and attacking weaknesses.
+</p>
+<br>
+<h2><b>Code Review Defects</b></h2>
+<p align="justify">
+Code analysis is a term used to describe the processes to inspect code for weaknesses and vulnerabilities.</p>
+<p align="justify">
+When the analysis is done by teams of humans reading the code, typically at the smaller unit level, it is referred to as code reviews. <br>
+Code reviews are a team-based activity where members of the development team inspect code. The premise behind peer-based code review is simple. Many eyes can discover what one does not see. This concept is not without flaws, however, and humans have limited abilities to parse into multilayer obfuscated code.<br>
+</p>
+<table id="defects">
+			<tr>
+					<th width="15%">
+							Error Mechanism
+					</th>
+					<th width="85%"> Review Tasking</th>
+			</tr>
+			<tr>
+					<td>
+							Inefficient Code
+					</td>
+					<td> 
+						If the code is obfuscated or overly complex, simplify it.
+					</td>
+			</tr>
+			<tr>
+					<td>
+							SANS TOP 25 / OWASP TOP 10
+					</td>
+					<td>
+					All code should be reviewed to specifically prevent recurrence of previous errors. Common error patterns from SANS and OWASP lists shold be cheked as well.
+					</td>
+			</tr>
+			<tr>
+					<td>
+							Errors and exception handling
+					</td>
+					<td>
+					All functions, all procedures and all components should fully check and handle exceptions.
+					</td>
+			</tr>
+			<tr>
+					<td>
+							Cryptographic Calls
+					</td>
+					<td>
+					Approved libraries, good random numbers.
+					</td>
+			</tr>
+			<tr>
+					<td>
+					Unsafe and deprecated function calls.
+					</td>
+					<td>
+					Use only approved functions.
+					</td>
+			</tr>
+			<tr>
+					<td>
+					Privilege Levels
+					</td>
+					<td>
+					Least privilege violations.
+					</td>
+			</tr>
+			<tr>
+					<td>
+					Logging
+					</td>
+					<td>
+					Ensure proper logging of errors and conditions.
+					</td>
+			</tr>
+			
+			<tr>
+					<td>
+					Secure key information
+					</td>
+					<td>
+					Handling of keys, PII, PCI and other sensitive data.
+					</td>
+			</tr>
+</table>
+<br>
+<h2><b>Fortify Defects</b></h2>
+<p align="justify">
+Code analysis is a term used to describe the processes to inspect code for weaknesses and vulnerabilities. 
+</p>
+<p align="justify">
+Static code analysis is frequently performed using automated tools. These tools are given a variety of names, but are commonly called source code analyzers. Sometimes, extra phrases, such as binary scanners or byte code scanners, are used to differentiate the tools. Static tools use a variety of mechanisms to search for weaknesses and vulnerabilities. Automated tools can provide advantages when checking syntax, approved function/library calls, and examining rules and semantics associated with logic and calls. They can catch elements a human could overlook.
+</p>
+
+<p style="page-break-before: always"></p>
+<!-- Vulnerability Definitions -->
+
+{% if vulns %}
+<h1>Vulnerability Definitions</h1>
+	{% for v in vulns %}
+
+		<table id="vulnerabilityDefinitions">
+			<tr>
+					<th colspan="2">
+							<h2><b><font color="white">{{v}}</font></b></h2>
+					</th>
+					
+			</tr>
+			<tr>
+					<td width="15%"><b>Occurences</b></td>
+					<td width="85%"> 
+					{{vulns[v]['occurrences']}}<br>
+					</td>
+			</tr>
+			<tr>
+					<td width="15%"><b>CWE</b></td>
+					<td width="85%"> 
+					{{vulns[v]['cwe']}}<br>
+					</td>
+			</tr>
+			<tr>
+					<td width="15%">
+							<b>Description</b>
+					</td>
+					<td width="85%"> 
+					{{vulns[v]['desc']}}<br>
+					</td>
+			</tr>
+			<tr>
+					<td width="15%">
+							<b>Recommendation</b>
+					</td>
+					<td width="85%"> 
+					{{vulns[v]['fix']}}<br>
+					</td>
+			</tr>
+			<tr>
+					<td width="15%">
+							<b>References</b>
+					</td>
+					<td width="85%"> 
+					{{vulns[v]['references']}}<br>
+					</td>
+			</tr>
+			
+			</table>
+<!---------START: SPACE FOR DEFECTS---->
+				
+					{% for d in defects %}
+						{% if v == defects[d]['name'] %}
+						{% if defects[d]['triage']!='Not an Issue' %}
+							<table id="defects">
+								<tr>
+										<th width="15%">Vulnerability</th>
+										<th width="85%">{{defects[d]['name']}}</th>
+								</tr>
+								<tr>
+										<td>Risk</td>
+										
+										<td>{{defects[d]['criticality']}}</td>
+										
+								</tr>
+								<tr>
+										<td><b>Analysis Type</b></td>
+										<td>{{defects[d]['type']}}</td>
+								</tr>
+								<tr>
+										<td>Scenario</td>
+										<td>{{defects[d]['details']}}</td>
+								</tr>
+								<tr>
+										<td>Status</td>
+										<td>{{defects[d]['triage']}}</td>
+								</tr>
+								
+								{% if defects[d]['type']=='Dynamic' %}
+								
+								<tr>
+										<td>URL</td>
+										<td>{{defects[d]['endpoint']}}</td>
+								</tr>
+								<tr>
+										<td>Method</td>
+										<td>{{defects[d]['method']}}</td>
+								</tr>
+								<tr>
+										<td>Parameter</td>
+										<td>{{defects[d]['parameter']}}</td>
+								</tr>
+								<tr>
+										<td>Comments</td>
+										<td>{{defects[d]['comments']}}</td>
+								</tr>
+								{% else %}
+								<tr>
+										<td>Location</td>
+										<td>{{defects[d]['location']}}</td>
+								</tr>
+								<tr>
+										<td>GitHub/Fortify Project</td>
+										<td>{{defects[d]['fortifyProject']}}</td>
+								</tr>
+								<tr>
+										<td>Code</td>
+										<td>{{defects[d]['code_snipped']}}</td>
+								</tr>
+								{% endif %}
+						{% endif %}		
+						{% endif %}	
+					{% endfor %}
+								
+								
+							</table>
+	<p style="page-break-before: always"></p>
+	{% endfor %}
+{% endif %}	
+<!---------------------------------------------------END: SPACE FOR DEFECTS---->
+
+
+<!--Appendix Summary-->
+<h1>Appendix A. Impact and Likelihood Definitions</h1>
+
+<h2>Risk Impact Assessment and Prioritization</h2>
+
+<p>
+A qualitative impact factor (High, Medium, or Low) has been associated with each vulnerability as well as an arbitrary assignment of the degree of skill that an attacker would require to exploit the vulnerability (Trivial, Moderate and Difficult). The DREAD Model is a qualitative risk analysis model that uses rating values to evaluate the risk level. 
+</p>
+
+<h2>The DREAD Model</h2>
+
+<p>
+The DREAD model takes into account the following items:
+<br><br>
+	Damage potential (How much are the assets affected?)<br>
+	Reproducibility (How easily the attack can be reproduced?)<br>
+	Exploitability (How easily the attack can be launched?)<br>
+	Affected users (What’s the number of affected users?)<br>
+	Discoverability (How easily the vulnerability can be found?)<br>
+<br>
+The threat is rated by answering the aforementioned questions and assigning rating values for every item (high, medium, low). The rating values represent the severity and are expressed as numbers (3-high, 2-medium, 1-low).
+<br><br>
+Reputation: How high are the stakes? Is there a risk to reputation, which could lead to the loss of customer trust?
+<br><br>
+Ratings do not have to use a large scale because this makes it difficult to rate threats consistently alongside one another. You can use a simple scheme such as High (1), Medium (2), and Low (3).
+<br><br>
+When you clearly define what each value represents for your rating system, it helps avoids confusion. 
+<br>
+</p>
+		
+<h2>Threat Rating Table</h2>
+<table id="dread">
+<!--Title-->
+<tr>
+	<th></th>
+	<th>Raiting</th>
+	<th>High (3)</th>
+	<th>Medium (2)</th>
+	<th>Low (1)</th>
+</tr>
+<!--Damange Potential-->
+<tr>
+	<td bgcolor="#FFBF00">D</td>
+	<td>Damage potential</td>
+	<td>The attacker can subvert the security system; get full trust authorization; run as administrator; upload content.</td>
+	<td>Leaking sensitive information</td>
+	<td>Leaking trivial information</td>
+</tr>
+<!--Reproducibility-->
+<tr>
+	<td bgcolor="#FFBF00">R</td>
+	<td>Reproducibility</td>
+	<td>The attack can be reproduced every time and does not require a timing window.</td>
+	<td>The attack can be reproduced, but only with a timing window and a particular race situation.</td>
+	<td>The attack is very difficult to reproduce, even with knowledge of the security hole.</td>
+</tr>
+<!--Exploitability-->
+<tr>
+	<td bgcolor="#FFBF00">E</td>
+	<td>Exploitability</td>
+	<td>A novice programmer could make the attack in a short time.</td>
+	<td>A skilled programmer could make the attack, then repeat the steps.</td>
+	<td>The attack requires an extremely skilled person and in-depth knowledge every time to exploit.</td>
+
+</tr>
+<!--Affected users-->
+<tr>
+	<td bgcolor="#FFBF00">A</td>
+	<td>Affected users</td>
+	<td>All users, default configuration, key customers</td>
+	<td>Some users, non-default configuration</td>
+	<td>Very small percentage of users, obscure feature; affects anonymous users</td>
+</tr>
+<!--Discoverability-->
+<tr>
+	<td bgcolor="#FFBF00">D</td>
+	<td>Discoverability</td>
+	<td>Published information explains the attack. The vulnerability is found in the most commonly used feature and is very noticeable.</td>
+	<td>The vulnerability is in a seldom-used part of the product, and only a few users should come across it. It would take some thinking to see malicious use.</td>
+	<td>The bug is obscure, and it is unlikely that users will work out damage potential.</td>
+</tr>
+</table>
+
+<p>
+After you ask the above questions, count the values (1–3) for a given threat. The result can fall in the range of 5–15. Then you can treat threats with overall ratings of 14–15 as Critical risk, 11-13 as High risk, 8–10 as Medium risk, and 5–7 as Low risk.
+</p>
+
+<p>
+All risks and recommendations should be reviewed by The Home Depot Information Assurance team and contextualized by persons with a more detailed knowledge of the environment and the risk management process of the organization.
+</p>
+<p><i><b>
+This report reflects only defects affecting PCI compliance. Be aware that there could exist other defects not included in this report, and you are responsible to review and triage them.
+</b></i></p>
+<h4>References</h4>
+<p>
+<a href="https://docs.microsoft.com/en-us/previous-versions/msp-n-p/ff648644(v=pandp.10)">https://docs.microsoft.com/en-us/previous-versions/msp-n-p/ff648644(v=pandp.10)</a> 
+</p>
+
+<p style="page-break-before: always"> <br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<table align="center">
+	<tr>
+		<td align="center" bgcolor="black">
+		<font size='4' color='white'><b>Disclaimer</b></font>
+		</td>
+	</tr>
+<tr>
+	<td align="justify">
+	The information contained in these documents is confidential, privileged and only for the information of the intended recipient and may not be used, published or redistributed without the prior written consent of:<br>
+	The Home Depot | 2455 Paces Ferry Road, N.W. Atlanta, GA 30339-4024
+	</td>
+</tr>
+</table>
+
+</body>
+</html>
+
+{% endautoescape %}
+{% endif %}
+{% endblock %}

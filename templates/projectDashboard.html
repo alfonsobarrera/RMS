@@ -1,0 +1,135 @@
+{% extends "home.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+  {{ super() }}
+  <style type="text/css">
+    .important { color: #336699; }
+  </style>
+{% endblock %}
+{% block content %}
+
+<script>
+function ajaxCall(url, element) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById(element).innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", url, true);
+  xhttp.send();
+}
+
+function verifycwe(){
+  var x = document.getElementById("cwe");
+  url='/project_add_defect/verifycwe/'+x.value.toString();
+  ajaxCall(url,'cweTitle')
+}
+
+function deleteRow(defectid, tblName, targetLink, project)
+{	
+	var tableRow = targetLink.parentNode.parentNode;
+	var tbl = tableRow.parentNode;
+	tbl.removeChild(tableRow);
+	test(defectid, project);
+}
+
+function test(defectid, project){
+	var url="/pmd/pi/"+project+"/r/f/"+defectid+"";
+	ajaxCall(url, "dmFortify");
+}
+
+function deleteRowRDefect(defectid, tblName, targetLink, project)
+{	
+	var tableRow = targetLink.parentNode.parentNode;
+	var tbl = tableRow.parentNode;
+	tbl.removeChild(tableRow);
+	testRDefect(defectid, project);
+}
+
+function testRDefect(defectid, project){
+	var url="/project_manage_defects/projectid/"+project+"/remove/"+defectid+""; 
+	ajaxCall(url, "dmFortify");
+}
+
+</script>
+
+
+
+  <h1>{{project.type}} - #{{project.assessment_id}}: <b>{{project.name}}</b></h1>
+  <h3>{{project.engineer }} - Tracker#: {{project.tracker_id}} 
+  <font color="#FF4000">
+  {% if project.status=='0' %}
+  [Draft Status]
+  {% endif %}
+  {% if project.status=='1' %}
+  [Started Status]
+  {% endif %}
+  {% if project.status=='2' %}
+  [Closed Status]
+  {% endif %}
+  {% if project.status=='3' %}
+  [Reopened Status]
+  {% endif %}  
+  </font>
+ </h3> 
+
+	<p class="important">
+	
+		<table width='100%'>
+			<tr>
+				<th width='6%'><label>Description:</label></th>
+					<td> <pre> <label>{{project.description}}</label></pre></td>
+				<th  width='6'><label>Scope:</label></th>
+					<td> <pre> <label>{{project.scope}}</label> </pre> </td>
+				<th width='6%'><label>URL:</label></th>
+					<td> <pre> <label>{{project.urls}}</label> </pre> </td>
+				<th width='6'><label>Source Code:</label></th>
+					<td> <pre> <label>{{project.githubs}}</label> </pre> </td>
+			</tr>
+			<tr>
+				<th width='6%'><label>Priority:</label></th>
+					<td><label># {{project.priority}}</label></td>
+				<th  width='6'><label>Fortify Projects</label></th>
+					<td><label>{{project.fortifys}}</label></td>
+				<th width='6%'><label>Deadline:</label></th>
+					<td><label>{{project.deadline}}</label></td>
+				<th width='6'><label></label></th>
+					<td><label></label></td>
+			</tr>
+			
+		</table>
+	</p>	
+	
+	<div class="projectmenu">
+		<a href="#" onclick="ajaxCall('/project_add_defect/projectid/{{project.id}}','projectContent')">Add Defect</a>
+		
+		
+		<a href="#" onclick='javascript:window.open("/project_import_45_defects/projectid/{{project.id}}", "_blank", "scrollbars=yes, width=1000,height=500");'>Import Fortify Defects</a>
+				
+		
+		<a href="#" onclick="ajaxCall('/project_manage_defects/projectid/{{project.id}}','projectContent')">Manage Defects</a>
+		<a href="#" onclick='javascript:window.open("/securityReport/create/{{project.id}}", "_blank", "scrollbars=yes, width=1000,height=500");'>Create Report</a>
+		<a href="{{url_for('project_delete', projectid=project.id)}}">Delete Project</a>
+		<a href="{{url_for('project_update', projectid=project.id)}}">Update Project</a>
+		
+		<a href="{{url_for('project_update_status', projectid=project.id, status=project.status)}}" style="color:#FFBF00"><b>{% if project.status=='0' %}
+								  Start the Project
+								  {% endif %}
+								  {% if project.status=='1' %}
+								  Close the Project
+								  {% endif %}
+								  {% if project.status=='2' %}
+								  Reopen the Project
+								  {% endif %}
+								  {% if project.status=='3' %}
+								  Close the Project
+								{% endif %}</b></a>
+	
+		
+	</div>
+	<p id="dmFortify"></p>	
+	<div id="projectContent"></div>
+
+	
+{% endblock %}

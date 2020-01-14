@@ -1,0 +1,89 @@
+{% extends "home.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+  {{ super() }}
+  <style type="text/css">
+    .important { color: #336699; }
+  </style>
+{% endblock %}
+{% block content %}
+  <h1>Add a new project</h1>
+	<p class="important">
+	
+	<form action="{{url_for('project_update', projectid=project.id)}}" method='POST'>
+	<table width='100%'>
+			<tr>
+				<td><label>Name:</label></td><td><input type='text' name='name' value='{{project.name}}' readonly></td>
+				<td><label>Assessment ID:</label></td><td><input type='number' name='assessment_id' value="{{project.assessment_id}}"></td>
+				<td><label>Tracker ID:</label></td><td><input type='number' name='tracker_id' value="{{project.tracker_id}}"></td>	
+				
+
+			</tr>	
+			<tr>
+			
+			
+				<td><label>Priority:</label></td>
+												<td>
+													<select name='priority' required>
+													<option value='{{project.priority}}'>{{project.priority}}</option>
+													<option value='1'>One</option>
+													<option value='2'>Two</option>
+													<option value='3'>Three</option>
+													<option value='4'>Four</option>
+													<option value='0'>Undefined</option>
+													</select>
+												</td>
+		
+				<td><label>Type</label></td><td>
+												<select name='type'>
+												<option value='{{project.type}}'>{{project.type}}</option>
+												<option value='ASA'>ASA</option>
+												<option value='Verification'>Fix Verification</option>
+												<option value='Wellness'>Wellness</option>
+												<option value='Other'>Other</option>
+												</select>
+											</td>
+
+				<td><label>Engineer:</label></td>
+											<td>
+												<select name='engineer'>
+													<option value='ASA'>Alfonso</option>
+													<option value='Verification'>Fix Verification</option>
+													<option value='Wellness'>Wellness</option>
+													<option value='Other'>Other</option>
+												</select>
+											</td>
+				<td><label>Is PCI:</label></td>
+											<td>
+												<select name='pci'>
+													<option value='0'>No</option>
+													<option value='1'>Yes</option>
+												</select>
+											</td>
+			</tr>
+			<tr>
+											
+											
+				<td><label>Description: </label></td><td><textarea name='description'>{{project.description}}</textarea></td>
+				<td><label>Scope: </label></td><td><textarea name='scope'>{{project.scope}}</textarea></td>				
+					
+				<td><label>URLS:</label></td><td><textarea name='urls'>{{project.urls}}</textarea></td>
+				<td><label>Github:</label></td><td><textarea name='githubs'>{{project.githubs}}</textarea></td>
+				
+			</tr>
+			
+			<tr>
+
+				
+
+				<td><label>Fortify:</label></td><td><textarea name='fortifys'>{{project.fortifys}}</textarea></td>
+			</tr>
+	</table>
+	<input type='submit' value='Submit'>
+	</form>
+
+	</p>
+	
+
+	
+{% endblock %}

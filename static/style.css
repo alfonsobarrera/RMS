@@ -1,0 +1,220 @@
+body,html{
+	font-family: Verdana;
+	font-size: 10px;
+}
+
+li{
+	font-family: Verdana;
+	font-size: 10px;
+	font-size: 12px;
+	color: #086A87;
+}
+
+}
+
+h1, h2, h3 {
+	font-family: Verdana;
+	color: #0B4C5F;		
+}
+
+#members {
+  font-family: Verdana;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#members td, #members th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#members tr:nth-child(even){background-color: #f2f2f2;}
+
+#members tr:hover {background-color: #ddd;}
+
+#members th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+
+table, th, td {
+	border-collapse: collapse;
+	vertical-align: top;
+	font-size: 12px;
+	text-align: left;
+	border-spacing: 0;
+	border: 0px;
+	
+}
+
+input[type=text], select {
+  padding: 2px 1px;
+  margin: 2px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: transparent; 
+  color: #086A87;
+}
+
+textarea {
+  width: 200px;
+  height: 120px;
+  padding: 2px 1px;
+  margin: 2px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: transparent; 
+  color: #086A87;
+}
+
+nav ul{height:100px; width:600px;}
+nav ul{overflow:hidden; overflow-y:scroll;}
+
+i {
+  color: #01DFD7;
+  background-color: #6E6E6E;
+}
+
+a:link {
+  color: #0B4C5F;
+  text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+  color: #0B4C5F;;
+}
+
+/* mouse over link */
+a:hover {
+  color: #FF8000;
+}
+
+/* selected link */
+a:active {
+  color: #00FF00;
+}
+
+ input[type=number]{
+  padding: 2px 1px;
+  margin: 2px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: transparent; 
+  color: #E74C3C
+}
+
+ input[type=password]{
+  padding: 2px 1px;
+  margin: 2px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: transparent; 
+  color: #F2F2F2
+}
+
+
+input[type=submit] {
+  background-color: #A5A5A5;
+  color: white;
+  padding: 4px 10px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #D35400;
+  color: #FFFFFF;
+}
+
+
+ label {
+  color: #85929E;
+}
+
+
+
+.boxhead a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+div {
+  background-color: transparent; 
+  color: #E74C3C
+}
+
+.btn {
+  border: 2px solid transparent;
+  background: #E6E6E6;
+  color: #0B4C5F;
+  text-align: center;
+  font-size: 10px;
+  line-height: 15px;
+  padding: 10px 0;
+  text-decoration: none;
+  text-shadow: none;
+  border-radius: 3px;
+  box-shadow: none;
+  transition: 0.5s;
+  display: block;
+  width: 150px;
+  margin: 0 auto;
+}
+ 
+.btn:hover {
+  background-color: #DF3A01;
+  color: #FFFFFF;
+}
+
+
+div.scrollmenu {
+  background-color: #333;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+div.scrollmenu a {
+  display: inline-block;
+  color: white;
+  text-align: left;
+  padding: 14px;
+  text-decoration: none;
+}
+
+div.scrollmenu a:hover {
+  background-color: #777;
+}
+
+
+div.projectmenu {
+  background-color: #086A87;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+div.projectmenu a {
+  display: inline-block;
+  color: white;
+  text-align: left;
+  padding: 14px;
+  text-decoration: none;
+}
+
+div.projectmenu a:hover {
+  background-color: #0489B1;
+}
+

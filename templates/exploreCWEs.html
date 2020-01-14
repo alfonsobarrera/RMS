@@ -1,0 +1,104 @@
+{% block body %}
+{% autoescape false %}
+
+<head>
+ {% block head %}
+  <title>RMS</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+	<link rel="icon" href="{{ url_for('static', filename='icon.gif') }}">
+   
+ {% endblock %}
+ 
+
+</head>
+
+
+<script>
+	function test(){
+	alert(3);
+	}
+	function ajaxCall(url, element) {
+	  var xhttp = new XMLHttpRequest();
+	  xhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			var jsonObj = JSON.parse(this.responseText);
+			data= "<h3>"+jsonObj['Name']+"</h3>";
+			if (jsonObj['Abstraction']!=null){data=data+"<li><b>Abstraction: </b>"+jsonObj['Abstraction']+"</li>";}
+			if (jsonObj['Status']!=null){data=data+"<li><b>Status: </b>"+jsonObj['Status']+" </li>";}
+			if (jsonObj['Description']!=null){data=data+"<li><b>Description: </b> "+jsonObj['Description']+" </li>";}
+			if (jsonObj['Extended Description']!=null){data=data+"<li><b>Extended Description: </b> "+jsonObj['Extended Description']+" </li>";}
+			if (jsonObj['Related Weaknesses']!=null){data=data+"<li><b>Related Weaknesses: </b> "+jsonObj['Related Weaknesses']+" </li>";}
+			if (jsonObj['Applicable Platforms']!=null){data=data+"<li><b>Applicable Platforms: </b> "+jsonObj['Applicable Platforms']+" </li>";}
+			if (jsonObj['Background Details']!=null){data=data+"<li><b>Background Details: </b> "+jsonObj['Background Details']+" </li>";}
+			if (jsonObj['Modes Of Introduction']!=null){data=data+"<li><b>Modes Of Introduction: </b> "+jsonObj['Modes Of Introduction']+" </li>";}
+			if (jsonObj['Exploitation Factors']!=null){data=data+"<li><b>Exploitation Factors: </b> "+jsonObj['Exploitation Factors']+" </li>";}
+			if (jsonObj['Likelihood of Exploit']!=null){data=data+"<li><b>Likelihood of Exploit: </b> "+jsonObj['Likelihood of Exploit']+" </li>";}
+			if (jsonObj['Potential Mitigations']!=null){data=data+"<li><b>Potential Mitigations: </b> "+jsonObj['Potential Mitigations']+" </li>";}
+			if (jsonObj['Observed Examples']!=null){data=data+"<li><b>Observed Examples: </b> "+jsonObj['Observed Examples']+" </li>";}
+			if (jsonObj['Affected Resources']!=null){data=data+"<li><b>Affected Resources: </b> "+jsonObj['Affected Resources']+" </li>";}
+			if (jsonObj['Related AttackPatterns']!=null){data=data+"<li><b>Related Attack Patterns: </b> "+jsonObj['Related AttackPatterns']+" </li>";}
+					
+		  document.getElementById(element).innerHTML = data;
+		}
+	  };
+	  xhttp.open("GET", url, true);
+	  xhttp.send();
+	}
+	
+	function filterText(id,num) {
+  // Declare variables 
+  var input, filter, table, tr, td, i;
+  input = document.getElementById(id);
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[num];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    } 
+  }
+}
+</script>
+
+	<h1>Explore CWEs</h1>
+	
+
+
+	<table>
+	
+	<tr>
+	<td width="30%">
+			<table id="myTable">
+				<tr>
+					<th>
+						<input type="text" id="cweRow" onkeyup="filterText('cweRow',0)">
+					</th>
+				</tr>
+			{% for i in cwes %}
+				<tr>
+					<td>
+						<b><i>{{i}}</i></b><a href="#" onclick="ajaxCall('/explorecwe/{{i}}','cweIdview')">- {{cwes[i]}}
+					</td>
+				</tr>
+			{% endfor %}
+			</table>
+	</td>
+	<td width="70%">
+		<div id="cweIdview"></div>
+	</td>
+	</table>
+			
+	
+{% endautoescape %}
+{% endblock %}
+	
+

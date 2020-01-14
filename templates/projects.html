@@ -1,0 +1,61 @@
+{% extends "home.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+  {{ super() }}
+  <style type="text/css">
+    .important { color: #336699; }
+  </style>
+{% endblock %}
+{% block content %}
+
+{% if newusers>0 %}
+	{% if session['role']=='Admin' %}
+		<p><b>There are {{newusers}} inactive users waiting for review</b></p>
+	{% endif %}
+{% endif %}
+
+
+  <h1>Projects</h1>
+
+	<p class="important">
+	
+		<table width='100%'>
+			<tr>
+				<th><label>Name</label></th>
+				<th><label>Assessment ID</label></th>
+				<th><label>Tracker ID</label></th>
+				<th><label>Engineer</label></th>
+				<th><label>Status</label></th>
+			</tr>
+			{% for project in projects: %}
+			<tr>
+				<td><a href='/projectDashboard/projectid/{{project.id}}'>{{project.name}}</a></td>
+				<td>{{project.assessment_id}}</td>
+				<td><a href="#" onclick='javascript:window.open("https://www.pivotaltracker.com/n/projects/2124204/stories/{{project.tracker_id}}", "_blank", "scrollbars=yes, width=800,height=500");'>{{project.tracker_id}}</a></td>
+				<td> {{userdic[project.engineer]}}
+				</td>
+				<td>  {% if project.status=='0' %}
+						<label>Draft</label>
+					  {% endif %}
+					  {% if project.status=='1' %}
+						<label>Started</label>
+					  {% endif %}
+					  {% if project.status=='2' %}
+						<label>Closed</label>
+					  {% endif %}
+					  {% if project.status=='3' %}
+						<label>Reopened</label>
+					  {% endif %}
+				</td>
+			</tr>
+			{% endfor %}
+			
+		</table>
+			
+	
+	</p>	
+	
+	
+
+	
+{% endblock %}

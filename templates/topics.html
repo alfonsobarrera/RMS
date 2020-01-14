@@ -1,0 +1,73 @@
+{% extends "home.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+  {{ super() }}
+  <style type="text/css">
+    .important { color: #336699; }
+  </style>
+{% endblock %}
+{% block content %}
+
+<table> 
+<tr>
+	<td rowspan=2>
+		<h1>Topics</h1>
+		<form method="POST" action="{{url_for('addNewTopic')}}">
+			<label> New Topic:</label><input type="text" name="topic" id="topic">
+			<label> Category:</label><input type="text" name="category" id="category">
+			<div></div>
+			<input type="submit" value="Submit">
+		</form> 
+
+
+		<h1>Notes</h1>
+		<form method="POST" action="{{url_for('addNewNote')}}">
+			<label> New Note:</label><input type="text" name="noteName" id="noteName">
+			<label> Topic:</label>
+				<select name='topic'>
+					<option value='default'>default</option>
+				</select>
+			<div></div>
+			<label> Reference:</label><input type="text" name="reference"><label> <i>*Link</i></label>
+			<div></div>
+			<textarea name="noteText" id="noteText"></textarea>
+
+			<div></div>
+			<input type="submit" value="Submit">
+		</form> 
+	</td>
+	<td>
+		<h1>Select a Notes</h1>
+		<nav>
+			<ul>
+				<li><a href="#">Link 1</a></li>
+				<li><a href="#">Link 1</a></li>
+				<li><a href="#">Link 1</a></li>
+				<li><a href="#">Link 1</a></li>
+				<li><a href="#">Link 1</a></li>
+				<li><a href="#">Link 1</a></li>
+				<li><a href="#">Link 1</a></li>
+				<li><a href="#">Link 1</a></li>
+				<li><a href="#">Link 1</a></li>
+				<li><a href="#">Link 1</a></li>
+				<li><a href="#">Link 1</a></li>
+				<li><a href="#">Link 1</a></li>
+				<li><a href="#">Link 1</a></li>
+				<li><a href="#">Link 1</a></li>
+				<li><a href="#">Link 1</a></li>
+				
+			</ul>
+		</nav>
+	</td>
+</tr>
+
+<tr>
+	<td>
+		<h1>View the selected Topic</h1>
+		<p contenteditable="true">This is an editable paragraph.</p>
+	</td>
+</tr>
+</table>
+
+	
+{% endblock %}

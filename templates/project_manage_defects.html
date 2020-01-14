@@ -1,0 +1,59 @@
+
+		
+		<script>
+		 function removeDefect(){
+			alert(3232);
+		 }
+		</script>
+		
+<p id="dmFortify"></p>		
+		<h2>
+			Manage the project's defects
+		</h2>
+		
+
+		<h3>Dynamic Defects</h3>
+		<ol>
+		<table name='Dynamic45Defects'>	
+		{% for defect in defects %}
+			{% if defect.source=='Manual' or defect.source=='DAST'  %}
+				{% if defect.projectid==projectidInt %}
+				<tr>
+					<td>
+						<li><a href="#" onclick='javascript:window.open("/project_manage_defects/projectid/{{projectid}}/view/{{defect.id}}", "_blank", "scrollbars=yes, width=800,height=500");'>View</a> <a href="#" onclick='javascript:window.open("/project_manage_defects/projectid/{{projectid}}/edit/{{defect.id}}", "_blank", "scrollbars=yes, width=800,height=500");'>Edit</a> <a href="#" onclick="deleteRowRDefect({{defect.id}}, 'Dynamic45Defects', this, '{{projectid}}')">Delete</a><label> {{defect.name}} | <b>Location:</b> {{defect.url}} [{{defect.parameter}}] - {{defect.risk}}</label></li>
+					</td>
+				</tr>
+				{% endif %}
+			{% endif %}
+		{% endfor %}
+		</table>
+		</ol>
+		
+		<h3>Source Code Defects</h3>
+		<ol>
+		<table name='DynamicCodeDefects'>	
+		{% for defect in defects %}
+			{% if defect.source=='Code' or defect.source=='Fortify'  %}
+				{% if defect.projectid==projectidInt %}
+				<tr>
+					<td>					
+						<li><a href="#" onclick='javascript:window.open("/project_manage_defects/projectid/{{projectid}}/view/{{defect.id}}", "_blank", "scrollbars=yes, width=800,height=500");'>View</a> <a href="#" onclick='javascript:window.open("/project_manage_defects/projectid/{{projectid}}/edit/{{defect.id}}", "_blank", "scrollbars=yes, width=800,height=500");'>Edit</a> <a href="#" onclick="deleteRowRDefect({{defect.id}}, 'DynamicCodeDefects', this, '{{projectid}}')">Delete</a><label>{{defect.name}}  | <b>Location:</b> {{defect.filename}} [{{defect.line}}] - {{defect.risk}}</label></li>
+					</td>
+				</tr>					
+				{% endif %}
+			{% endif %}
+		{% endfor %}
+		</table>
+		</ol>
+		<h3>Fortify Code Defects</h3>
+<ol>
+<table name='bdayTable'>		
+		{% for i in fdefects:%}
+			<tr>
+			<td>
+			<li><a href="#" onclick="deleteRow({{i.id}}, 'bdayTable', this, '{{projectid}}')">Delete</a>  <label>{{i.name}} | <b>Location:</b> {{i.shortFileName}} [{{i.lineNumber}}] - {{i.risk}}</label></td>
+			</li></tr>
+		{% endfor %}
+</table>
+</ol>
+

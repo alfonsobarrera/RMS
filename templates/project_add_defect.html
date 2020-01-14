@@ -1,0 +1,82 @@
+
+<script>
+
+function verifycwe(){
+  var x = document.getElementById("cwe");
+  x.value = x.value.toUpperCase();
+}
+
+function ajaxcall(url) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("cweTitle").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", url, true);
+  xhttp.send();
+}
+</script>
+
+
+		<h2 id='cweTitle'>
+			Collect Defect Information
+		</h2>
+		
+		
+<form action='/project_add_defect/projectid/{{projectid}}' method='POST'>
+	
+	<table id="defects" width="100%"> <!--TABLE ONE-->
+		<tr>	
+				<td>
+					<label>CWE Number:</label>	
+					<input type='number' name='cwe' id='cwe' onkeyup="verifycwe()" required>
+				</td>
+				<td><label>Risk:</label>
+				<select name="risk" id="risk" required><option disabled selected value> -- select -- </option>
+						<option value="Critical">Critical</option>
+						<option value="High">High</option>
+						<option value="Medium">Medium</option>
+						<option value="Low">Low</option>
+					</select>
+				
+				</td>
+				<td>
+					<label>Source:</label>	
+					<select name="source" id="source" required>
+						<option value="Manual">Manual Testing</option>
+						<option value="DAST">WebInspect-BURP Suite</option>
+						<option value="Code">Code Walktrought</option>
+					</select>
+				</td>
+		</tr>
+		<tr>
+			<th colspan='4' bgcolor='#F2F2F2'>Dynamic Defect</th>
+		</tr>
+		<tr>
+				<td><label>http(s)://URL</label><input type='text' name='url'></td>
+				<td><label>Parameter:   </label><input type='text' name='parameter'></td>
+				<td><label>Payload:     </label><input type='text' name='payload'></td>	
+
+		</tr>
+		<tr>
+			<th colspan='4' bgcolor='#F2F2F2'>Static Defect</th>
+		</tr>		
+		<tr>
+				<td><label>GitHub URL: </label><input type='text' name='repository'></td>
+				<td><label>File Name:  </label><input type='text' name='filename'></td>
+				<td><label>Line #:     </label><input type='number' name='linenumber'></td>
+				
+		</tr>
+		<tr>
+			<th colspan='4' bgcolor='#F2F2F2'>Details</th>
+		</tr>		
+		<tr>
+				<td><label>Code or Case Scenario:</label> <br><textarea name='scenario'required></textarea></td>
+				<td><label>Reproduction Steps:</label> <br><textarea name='reproductionSteps' required></textarea></td>
+				<td><label>Recommendation:</label> <br><textarea name='recommendation' required></textarea></td>
+				
+		</tr>
+	</table>
+<input type="submit" value="Submit">
+</form>
