@@ -1,0 +1,33 @@
+{% extends "home.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+  {{ super() }}
+  <style type="text/css">
+    .important { color: #336699; }
+  </style>
+{% endblock %}
+{% block content %}
+
+  <h3>[-] Team Projects</h3>
+
+		<table id="members">
+			<tr>
+				<th>Name</th>
+				<th>Assessment ID</th>
+				<th>Tracker ID</th>
+				<th>Engineer</th>
+				<th>Status</th>
+			</tr>
+			{% for project in projects:%}
+			<tr>
+				<td><a href='/projectDashboard/projectid/{{project.id}}' >{{project.name}}</a></td>
+				<td>{{project.assessment_id}}</td>
+				<td>{{project.tracker_id}}</td>
+				<td>{{project.engineer }}</td>
+				<td>{{project.status}}</td>
+			</tr>
+			{% endfor %}
+			
+		</table>
+
+{% endblock %}

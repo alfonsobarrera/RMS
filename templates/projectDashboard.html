@@ -1,0 +1,48 @@
+{% extends "home.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+  {{ super() }}
+  <style type="text/css">
+    .important { color: #336699; }
+  </style>
+{% endblock %}
+{% block content %}
+
+<script>
+function ajaxCall(url) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("projectContent").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", url, true);
+  xhttp.send();
+}
+</script>
+  <h3><b>{{project.name}}: Ownership: {{project.engineer }} - Tracker#: {{project.tracker_id}} - Status: {{project.status}}</b></h3>
+  		<table id="members">
+			<tr> <th width='6%'>Description:</th> <td>{{project.description}}</td> </tr>
+			<tr> <th  width='6'>Scope:</th>	<td>{{project.scope}}</td></tr>
+			<tr> <th width='6%'>URL:</th> <td>{{project.urls}}</td> </tr>
+			<tr> <th width='6'>Source Code:</th> <td>{{project.githubs}}</td> </tr>
+			<tr> <th width='6%'>Priority:</th> <td># {{project.priority}}</td> </tr>
+			<tr> <th  width='6'>Fortify Projects</th><td>{{project.fortifys}}</td> </tr>
+			<tr> <th width='6%'>Deadline:</th> <td>{{project.deadline}}</td> </tr>
+			
+		</table>
+	
+	<div class="scrollmenu">
+		<a href="#" onclick="ajaxCall('/project_add_defect/projectid/{{project.id}}')">Add Defect</a>
+		<a href="#" onclick="ajaxCall('/project_import_45_defects/projectid/{{project.id}}')">Import Fortify Defects</a>
+		<a href="#" onclick="ajaxCall('/project_manage_defects/projectid/{{project.id}}')">Manage Defects</a>
+		<a href="{{url_for('project_create_sec_report', projectid=project.id)}}">Create Report</a>
+		<a href="{{url_for('project_update', projectid=project.id)}}">Update Project</a>
+		<a href="{{url_for('project_delete', projectid=project.id)}}">Delete Project</a>
+		
+	</div>
+	
+	<div id="projectContent"></div>
+
+	
+{% endblock %}

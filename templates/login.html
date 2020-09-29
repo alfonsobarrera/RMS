@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ {% block head %}
+  <title>RMS</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+	<link rel="icon" href="{{ url_for('static', filename='icon.gif') }}">
+
+   
+ {% endblock %}
+ 
+</head>
+
+{% block body %}
+{% autoescape false %}
+<body>
+
+<!--<table width="100%" style="border: 1px solid #17202A"> -->
+
+
+
+<div class="flex-container">
+  <div class="flex-child">
+   <h1>Bug Reporting System</h1>
+  </div>
+  <div class="flex-child">
+    	<form action = "{{ url_for('login') }}" method = "POST">
+					<input type = "password" name = "username" placeholder="Username"/> 
+					<input type = "password" name = "password" placeholder="Password"/>
+					<input type = "submit" value = "Log in" />
+	</form>
+  </div>
+</div>
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+   
+    {% for category, message in messages %}
+		
+			<div class="alert">
+			  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+			  <strong>{{ category }}: </strong> {{ message }}
+			</div>
+
+    {% endfor %}
+   
+  {% endif %}
+{% endwith %}
+
+
+     
+<div class="signflex-container">
+	<div class="signflex-child">
+		<form action="{{url_for('SignUp')}}"  method="POST">
+
+			<h2>Sign Up</h2>
+
+				<table>
+					<tr><td></td><td><input type = "text" name = "fname" placeholder="First Name" required /></td></tr>
+					<tr><td></td><td><input type = "text" name = "lname" placeholder="Last Name" required /></td></tr>
+					<tr><td></td><td><input type = "text" name = "username" placeholder="Username" required /></td></tr>
+					<tr><td></td><td><input type = "password" name = "password" placeholder="Password" required/></td></tr>
+					<input type = "hidden" name = "trackerkey" value=0 placeholder='0000000' />
+				</table>
+				<input type = "submit" value = "Submit" />
+			
+			<p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+
+		</form>
+	</div>
+	<div class="signflex-child">
+		
+	</div>
+</div>
+
+  
+<div id="content">{% block content %}{% endblock %}</div>
+    <div id="footer">
+      {% block footer %}
+      Developed by <a href="https://www.linkedin.com/in/alfonso-barrera-52684393/" target="_blank">Alfonso Barrera</a>.
+      {% endblock %}
+</div>
+  
+
+
+{% endautoescape %}
+</body>
+{% endblock %}

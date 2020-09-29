@@ -1,0 +1,53 @@
+{% extends "home.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+  {{ super() }}
+
+{% endblock %}
+{% block content %}
+
+  <h3>[+] Add Application</h3>
+	<p class="important">
+	<form action='{{url_for("addNewApplication")}}' method='POST'>
+			<table width='100%'>
+			<tr>
+				<td><input type='number' name='sap_id' placeholder="SAP IP #" required/></td>
+				<td><input type='text' name='experience' placeholder="Experience" required/></td>
+				<td><input type='text' name='sub_experience' placeholder="Sub-Experience" required/></td>
+				<td><input type='text' name='name' placeholder="Application Name" required/></td>
+			</tr>
+			</table>
+				<input type='submit' value='Submit'>
+	</form>
+	</p>
+	
+  <h3>[-] Existing Applications</h3>
+	
+	
+		<table id="members">
+			<tr>
+				<th>SAP IP #</th>
+				<th>Experience</th>
+				<th>Sub-Experience</th>
+				<th>Application Name</th>
+				<th>Action</th>
+			</tr>
+			{% for application in applications:%}
+			<tr>
+				<td>{{application.sap_id}}</td>
+				<td>{{application.experience}}</td>
+				<td>{{application.subexperience}}</td>
+				<td>{{application.name}}</td>
+				<td>
+					<a href='/addNewProject/appid/{{application.id}}'> Create Project </a>
+				</td>
+			</tr>
+			{% endfor %}
+			
+		</table>
+			
+	
+		
+	
+	
+{% endblock %}

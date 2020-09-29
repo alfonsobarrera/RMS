@@ -1,0 +1,68 @@
+
+
+		<h3>
+			[+] Defect Information
+		</h3>
+
+<form action='/project_add_defect/projectid/{{projectid}}' method='POST'>
+<div class="signflex-container">
+	<div class="signflex-child">
+		<h4> General Information</h4>
+			<p><input type='text' name='name' placeholder="Vulnerability Name" required/> *required</p>
+			<p><select name="risk" id="risk" placeholder="Risk" required>
+				<option disabled selected value> -- select -- </option>
+				<option value="Critical">Critical</option>
+				<option value="High">High</option>
+				<option value="Medium">Medium</option>
+				<option value="Low">Low</option>
+			</select> *required<p>
+			<p><select name="source" id="source" placeholder="Source" required>
+				<option value="Manual">Manual Testing</option>
+				<option value="DAST">WebInspect-BURP Suite</option>
+				<option value="Code">Code Walktrought</option>
+				<option value="Fortify">Fortify</option>
+			</select> *required</p>
+			<p><input type=number name='reference' placeholder="CWE Number"/></p>
+		<h4> Dynamic Defect</h4>
+			<p><input type='text' name='url' placeholder="http(s)://URL"/></p>
+			<p><input type='text' name='parameter' placeholder="Parameter"/></p>
+			<p><input type='text' name='payload' placeholder="Payload"/></p>
+			<p><select name="owasp" placeholder="OWASP TOP 10 Category"/>
+				<option value="NA">NA</option>
+				<option value="A1">Injection</option>
+				<option value="A2">Broken Authentication</option>
+				<option value="A3">Sensitive Data Exposure</option>
+				<option value="A4">XML External Entities</option>
+				<option value="A5">Broken Authentication</option>
+				<option value="A6">Security Misconfiguration</option>
+				<option value="A7">Cross-Site Scripting</option>
+				<option value="A8">Insecure Deserialization</option>
+				<option value="A9">Using Components with Known Vulnerabilities</option>
+				<option value="A10">Insufficient Logging - Monitoring</option>
+			</select></p>
+		<h4> Source Code Defect</h4>
+			<p><input type='text' name='repository' placeholder="GitHub URL"/></p>
+			<p><input type='text' name='filename' placeholder="File Name"/></p>
+			<p><input type='number' name='linenumber' placeholder="Source Line #"/></p>
+			<p><select name="FortifyTriage" id="reference" placeholder="Fortify Triaged">
+				<option value="NA">NA</option>
+				<option value="Exploitable">Exploitable</option>
+				<option value="3rd-Party">3rd Party</option>
+			</select></p>
+	</div>
+	<div class="signflex-child">
+		<h4> Defect Context</h4>
+			<p><textarea name='description' placeholder="General Description"></textarea></p>
+			<p><textarea name='scenario'placeholder="Application Context Risk Explained"></textarea></p>
+			<p><textarea name='reproductionSteps' placeholder="Reproduction Steps"></textarea></p>
+			<p><textarea name='recommendation' placeholder="Recommendation"></textarea></p>
+		
+	</div>
+</div>
+
+
+
+	
+
+<input type="submit" value="Submit Defect">
+</form>

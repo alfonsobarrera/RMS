@@ -1,0 +1,25 @@
+
+
+	<form action="/fortifyImport/projectid/{{projectid}}/appname/{{appname}}" method='POST' enctype = "multipart/form-data">
+
+	 
+	<h3>
+	Import Fortify defects 
+	</h3>
+	
+	
+	<label><b>Follow these rules:</b></label>
+	<br><br>
+	<li>Use comma separated fortify project names</li>
+	<li>Do not include versions</li>
+	<li>Respect lower and uppercase characters</li>
+	<li>Example: CustoRec_project1, CustoRec_project2</li>
+	<br>
+	<label><b>Projects:</b></label>
+	<br>
+	<textarea name="fprojects"></textarea>
+	<input type='hidden' name='projectid' value='{{projectid}}'>
+	<br>
+	<input type="submit" value="Submit">
+
+	</form>

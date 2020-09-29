@@ -1,0 +1,61 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ {% block head %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+	<link rel="icon" href="{{ url_for('static', filename='icon.gif') }}">
+   
+ {% endblock %}
+ 
+
+</head>
+
+{% block body %}
+<body>
+
+<div class="flex-container">
+  <div class="flex-child">
+   <h1>Bug Reporting System</h1>
+  </div>
+  <div class="flex-child">
+    	
+  </div>
+</div>
+
+{% if session['logged_in'] %}
+
+<div class="scrollmenu">
+	<a href="{{url_for('logout')}}">Logout</a>
+	<a href="{{url_for('applications')}}">Applications</a>
+	<a href="{{url_for('projects')}}">Projects</a>
+
+	<a href="{{url_for('update_profile', userid=session['userid'])}}"><font color="#FFCF0E">Profile: {{session['fname']}} {{session['lname']}}</font></a>
+</div>
+
+{% endif %}
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+   
+    {% for category, message in messages %}
+		
+			<div class="alert">
+			  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+			  <strong>{{ category }}: </strong> {{ message }}
+			</div>
+
+    {% endfor %}
+   
+  {% endif %}
+{% endwith %}
+
+
+<div id="content">{% block content %}{% endblock %}</div>
+
+</body>
+{% endblock %}
+</html>

@@ -1,0 +1,52 @@
+{% extends "home.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+  {{ super() }}
+  <style type="text/css">
+    .important { color: #336699; }
+  </style>
+{% endblock %}
+{% block content %}
+
+
+  <h3> [+]Update Users</h3>
+	
+		{% if user %}
+		
+		<form action="{{url_for('update_user', userid=user.id)}}" method="POST">
+			<table id="members">
+
+				<tr> <th>First Name</th><td><input type="text" name="fname" value="{{user.fname}}" required></input></td> </tr>
+				<tr> <th>Last Name</th><td><input type="text" name="lname" value="{{user.lname}}" required></input></td> </tr>
+				<tr> <th>Username</th><td><input type="text" name="username" value="{{user.username}}" required></input></td> </tr>
+				<tr> <th>Password</th><td><input type="text" name="password" placeholder="********"></input></td> </tr>
+				<tr> <th>Tracker Key</th><td><input type="text" name="trackerkey" value="{{user.trackerkey}}" required></input> </td> </tr>
+				<tr> <th>Role</th>
+						<td>
+							<select name="role" required>
+								<option value="{{user.role}}" selected>{{user.role}}</option>
+								<option value="{{MemberRole.Admin}}">{{MemberRole.Admin}}</option>
+								<option value="{{MemberRole.General}}">{{MemberRole.General}}</option>
+								<option value="{{MemberRole.Guest}}">{{MemberRole.Guest}}</option>
+							</select>
+						</td>
+				</tr>
+				<tr> <th>Status</th>
+						<td>
+							<select name="status" required>
+								<option value="{{user.status}}" selected>{{user.status}}</option>
+								<option value="{{MemberStatus.Active}}">{{MemberStatus.Active}}</option>
+								<option value="{{MemberStatus.Inactive}}">{{MemberStatus.Inactive}}</option>
+							</select>						
+						</td>
+				</tr>
+			</table>
+			<input type = "submit" value = "Submit" />
+		</form>
+
+			
+		{% else %}
+			User does not exist.
+		{% endif %}
+	
+{% endblock %}

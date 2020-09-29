@@ -1,0 +1,55 @@
+{% extends "home.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+  {{ super() }}
+  <style type="text/css">
+    .important { color: #336699; }
+  </style>
+{% endblock %}
+{% block content %}
+
+  <h3>[+] Add Project</h3>
+	
+	<form action='/addNewProject/appid/{{application.id}}' method='POST'>
+	<div class="signflex-container">
+		<div class="signflex-child">
+				<p>SAP IP #: {{application.sap_id}} <input type='text' name='name' value='{{application.name}}' readonly></p>
+			<p><input type='number' name='assessment_id' placeholder="Assessment ID"></p>
+			<p><input type='number' name='tracker_id' placeholder="Tracker ID"></p>
+
+
+			<p><select name='priority' required>
+				<option disabled selected value>Priority</option>
+				<option value='1'>One</option>
+				<option value='2'>Two</option>
+				<option value='3'>Three</option>
+				<option value='4'>Four</option>
+				<option value='0'>Undefined</option>
+			</select>
+			</p>
+
+			<p><select name='type' required>
+				<option disabled selected value>Assessment Type</option>
+				<option value='Adhoc'>Adhoc</option>
+				<option value='Verification'>Fix Verification</option>
+				<option value='Pen Test'>Full Pen Test</option>
+				<option value='Threat Modeling'>Threat Modeling</option>
+				<option value='Architecture'>Architecture Review</option>
+			</select>
+			</p>
+
+			<p><textarea name='description' placeholder="Project Description"></textarea></p>
+			<p><textarea name='scope' placeholder="Context/Scope"></textarea></p>
+		</div>
+
+		<div class="signflex-child">
+			<p><textarea name='fortifys' placeholder="Comma Separated Fortify Project Names"></textarea></p>
+			<p><textarea name='urls' placeholder="Target URLs"></textarea></p>
+			<p><textarea name='githubs' placeholder="GitHub Code Repository"></textarea></p>
+		</div>
+	</div>
+	<input type='submit' value='Submit'>
+	</form>
+
+
+{% endblock %}
